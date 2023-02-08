@@ -1,0 +1,6 @@
+<% @lists.each do |l| %>
+<h1><%= l.name %> </h1>
+<%= link_to 'list details', list_path(l.id) %>
+<% end %>
+<hr>
+<%= link_to 'create a movie list', new_list_path %>
