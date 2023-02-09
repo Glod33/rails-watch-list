@@ -11,10 +11,10 @@
   </head>
 
   <body>
-    <nav class='navbar navbar-light bg-light'>
-      <i class="fa-sharp fa-solid fa-popcorn"></i>
-      <%= link_to 'my lists', lists_path %>
-      <%= link_to 'create a new list', new_list_path %>
+    <nav class='navbar-rutger'>
+      <i class="fa-solid fa-film fa-3x navbar-brand navbar-logo"></i>
+      <%= link_to 'my lists', lists_path, class: "btn btn-outline-primary" %>
+      <%= link_to 'create a new list', new_list_path, class: "btn btn-outline-primary" %>
     </nav>
     <%= yield %>
   </body>

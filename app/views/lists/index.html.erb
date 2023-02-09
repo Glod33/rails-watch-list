@@ -1,6 +1,17 @@
+<div class="banner cinema-seats">
+<h1>your lists</h1>
+</div>
+
+
+<div class="container">
 <% @lists.each do |l| %>
-<h1><%= l.name %> </h1>
-<%= link_to 'list details', list_path(l.id) %>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag "Big_lebowski.jpg", alt: "big lebowski", class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= l.name %></h5>
+      <p class="card-text">empty info for now</p>
+      <%= link_to 'list details', list_path(l.id), class: "btn btn-primary" %>
+    </div>
+  </div>
 <% end %>
-<hr>
-<%= link_to 'create a movie list', new_list_path %>
+</div>
