@@ -1,13 +1,26 @@
-<%= @list.name %>
-<% @list.bookmarks.each do |b| %>
-  <%= b.movie.title %>
-  <%= b.movie.rating %>
-  <%= b.movie.overview %>
-  <%= b.comment %>
-<% end %>
-<%= link_to 'Create a bookmark', new_list_bookmark_path(@list), class: "btn btn-primary" %>
-<%= link_to "Delete this list",
-  list_path(@list),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-  class: "btn btn-warning"
-%>
+<div class="banner cinema-seats">
+  <h1><%= @list.name %></h1>
+</div>
+
+<div class="container">
+  <% @list.bookmarks.each do |b| %>
+    <div class="card" style="width: 18rem;">
+    <%= image_tag "Big_lebowski.jpg", alt: "big lebowski", class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= b.movie.title %></h5>
+        <%# <%= b.movie.rating %>
+        <p class="card-text"><%= b.movie.overview %></p>
+        <h5><em>"<%= b.comment %>"</em></h4>
+      </div>
+    </div>
+  <% end %>
+</div>
+<hr>
+<div class="container">
+  <%= link_to 'Create a bookmark', new_list_bookmark_path(@list), class: "btn btn-primary" %>
+  <%= link_to "Delete this list",
+    list_path(@list),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    class: "btn btn-primary"
+  %>
+</div>

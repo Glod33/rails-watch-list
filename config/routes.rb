@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'lists#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   # A user can see all the lists
   # A user can see a specific list
   # A user can create a new list
-  resources :lists, only: [:index, :show, :new, :create, :destroy] do
+  resources :lists, only: [:show, :new, :create, :destroy] do
     resources :bookmarks, only: %i[new create]
   end
   resources :bookmarks, only: :destroy
